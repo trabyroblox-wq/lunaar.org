@@ -13,7 +13,6 @@ import { join } from "path";
 import packageJson from "./package.json" with { type: "json" };
 import compression from "compression";
 import { fileURLToPath } from "node:url";
-import fetch from "node-fetch";
 import dotenv from "dotenv";
 import { execSync } from "node:child_process";
 import { scramjetPath } from "@mercuryworkshop/scramjet/path";

@@ -5,13 +5,14 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "bun run index.js",
+    "start": "node index.js",
     "format": "prettier --write .",
-    "dev": "bun --watch index.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
   "dependencies": {
     "@mercuryworkshop/bare-as-module3": "^2.2.2",
     "@mercuryworkshop/bare-mux": "^2.1.7",
@@ -25,9 +26,11 @@
     "compression": "^1.7.5",
     "dotenv": "^17.2.1",
     "express": "^4.21.2",
-    "http-proxy": "^1.18.1"
+    "http-proxy": "^1.18.1",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
+    "nodemon": "^2.0.22",
     "prettier": "^3.6.2"
   }
 }

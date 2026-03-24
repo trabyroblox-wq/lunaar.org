@@ -1,12 +1,15 @@
-FROM oven/bun:1
+FROM node:24-alpine
+
+# Install pnpm and git
+RUN apk add --no-cache git && npm install -g pnpm
 
 WORKDIR /app
 
 # Copy package files
-COPY package.json ./
+COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies (production only)
-RUN bun install --production
+RUN pnpm install --prod --frozen-lockfile
 
 # Copy source code
 COPY . .
@@ -18,4 +21,4 @@ ENV NODE_ENV=production
 EXPOSE 8080
 
 # Start the application
-CMD ["bun", "run", "index.js"]
+CMD ["node", "index.js"]
